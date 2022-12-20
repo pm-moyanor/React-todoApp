@@ -2,12 +2,11 @@ import { useState } from "react";
 
 export default function Todo({ handleEditClick, handleRemoveClick, todo }) {
   return (
-    <div>
-      <li id={todo.id} key={todo.id}>
-        {todo.task}
-      </li>
+    <>
+      {todo.task}
+
       <button onClick={handleEditClick}>edit</button>
-      <button onClick={handleRemoveClick}>remove</button>
-    </div>
+      <button onClick={()=>handleRemoveClick(todo.id)}>remove</button>
+    </>
   );
 }

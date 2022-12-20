@@ -7,6 +7,7 @@ export default function AddTodo({ onAddTodo }) {
   function handleAddClick() {
     setCount(count + 1);
     onAddTodo(todo, count);
+    setTodo("")
   }
 
   return (

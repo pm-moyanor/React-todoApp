@@ -9,12 +9,15 @@ export default function TodoApp() {
     setTodos([...todos, { task: t, id: c, done: false }]);
   }
 
-  console.log(todos);
-  //s
+  function handleRemoveClick(todoId) {
+    setTodos(todos.filter((t) => t.id !== todoId));
+    return todos;
+  }
+
   return (
     <div>
       <AddTodo onAddTodo={onAddTodo} />
-      <TodoList todos={todos} />
+      <TodoList todos={todos} handleRemoveClick={handleRemoveClick} />
     </div>
   );
 }
