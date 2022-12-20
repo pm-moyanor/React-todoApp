@@ -5,18 +5,12 @@ import AddTodo from "./AddTodo";
 export default function TodoApp() {
   const [todos, setTodos] = useState([]);
 
-  function onAddTodo(t) {
-    setTodos([...todos, t]);
-    console.log(todos);
+  function onAddTodo(t, c) {
+    setTodos([...todos, { task: t, id: c, done: false }]);
   }
 
-// WORK ON TODO BUTTONS
-  function handleRemoveClick(e) {
-    setTodos(todos.filter(t=>t !=))
-    console.log("remove clicked");
-    
-  }
-//
+  console.log(todos);
+  //s
   return (
     <div>
       <AddTodo onAddTodo={onAddTodo} />

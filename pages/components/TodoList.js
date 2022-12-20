@@ -1,12 +1,13 @@
 import { useState } from "react";
 import Todo from "./Todo";
 
-export default function TodoList({ todos ,handleRemoveClick}) {
-
+export default function TodoList({ todos }) {
   const [newTodo, setNewTodo] = useState(null);
 
-
-
+  function handleRemoveClick(e) {
+    //setTodos(todos.filter(t=>t !=))
+    console.log("remove clicked");
+  }
   function handleEditClick() {
     console.log("edit clicked");
   }
@@ -15,15 +16,11 @@ export default function TodoList({ todos ,handleRemoveClick}) {
     <ul>
       {todos.map((todo) => {
         return (
-          <li>
-            {
-              <Todo
-                handleEditClick={handleEditClick}
-                handleRemoveClick={handleRemoveClick}
-                todo={todo}
-              />
-            }
-          </li>
+          <Todo
+            handleEditClick={handleEditClick}
+            handleRemoveClick={handleRemoveClick}
+            todo={todo}
+          />
         );
       })}
     </ul>
