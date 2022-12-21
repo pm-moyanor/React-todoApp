@@ -14,10 +14,18 @@ export default function TodoApp() {
     return todos;
   }
 
+  function handleEditClick(todo) {
+    console.log("edit clicked", todo);
+  }
+
   return (
     <div>
       <AddTodo onAddTodo={onAddTodo} />
-      <TodoList todos={todos} handleRemoveClick={handleRemoveClick} />
+      <TodoList
+        todos={todos}
+        handleRemoveClick={handleRemoveClick}
+        handleEditClick={handleEditClick}
+      />
     </div>
   );
 }

@@ -1,11 +1,12 @@
 import { useState } from "react";
 import Todo from "./Todo";
 
-export default function TodoList({ todos, handleRemoveClick }) {
-  function handleEditClick() {
-    console.log("edit clicked");
-  }
+export default function TodoList({
+  todos,
+  handleRemoveClick,
+  handleEditClick,
 
+}) {
   return (
     <ul>
       {todos.map((todo) => {
@@ -16,6 +17,7 @@ export default function TodoList({ todos, handleRemoveClick }) {
                 handleEditClick={handleEditClick}
                 handleRemoveClick={handleRemoveClick}
                 todo={todo}
+             
               />
             }
           </li>
