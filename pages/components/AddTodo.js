@@ -14,7 +14,7 @@ export default function AddTodo({ onAddTodo }) {
     <div>
       <input
         type="text"
-        placeholder="new task"
+        placeholder="new text"
         value={todo}
         onChange={(e) => setTodo(e.target.value)}
       ></input>
